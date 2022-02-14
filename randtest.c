@@ -18,13 +18,12 @@ void * rfunc(void * vinfo) {
 #ifndef SLOWDOWN
   int rnum = 0;
   for(unsigned long tries = 0; tries < RANDS; ++tries) {
-    rnum += 8000 % 4000;
+    rnum += rand() % 4000;
   }
   info->rnum = rnum;
 #else
-  int rnum = 0;
   for(unsigned long tries = 0; tries < RANDS; ++tries) {
-    info->rnum += 8000 % 4000;
+    info->rnum += rand() % 4000;
   }
 #endif
   info->randnums += RANDS;
